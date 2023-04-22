@@ -1,23 +1,107 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px Times; color: #eae96f; -webkit-text-stroke: #eae96f}
-    span.s1 {font-kerning: none}
-  </style>
+	<title>Interactive Visualizations</title>
+	<style type="text/css">
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f9f9f9;
+		}
+
+		.visualize {
+			width: 150px;
+			height: 150px;
+			margin: 10px;
+			border-radius: 50%;
+			background-color: #2196F3;
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+		}
+
+		.visualize:hover .circle-blue {
+			animation: burst 0.5s ease-out forwards;
+		}
+
+		.visualize .circle-blue {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #fff;
+			animation: move 2s ease-in-out infinite alternate;
+		}
+
+		.visualize:hover .circle-white {
+			content: "A";
+			font-size: 50px;
+			color: #fff;
+			background-color: #4CAF50;
+			animation: transform 0.5s ease-out forwards;
+		}
+
+		.visualize .circle-white {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 25px;
+			font-weight: bold;
+			color: #000;
+		}
+
+		@keyframes move {
+			from { transform: translate(0, 0); }
+			to { transform: translate(20px, -20px); }
+		}
+
+		@keyframes burst {
+			0% { transform: scale(1); }
+			50% { transform: scale(3); }
+			100% { transform: scale(5); opacity: 0; }
+		}
+
+		@keyframes transform {
+			0% { transform: scale(1); }
+			50% { transform: scale(2); }
+			100% { transform: scale(1); }
+		}
+	</style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;h1&gt;Hello World&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1">&lt;p&gt;I'm hosted with GitHub Pages.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+	<div class="container">
+		<div class="visualize">
+			<div class="circle-blue"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle-blue"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle-blue"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle-white"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle-white"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle-white"></div>
+		</div>
+	</div>
 </body>
 </html>
