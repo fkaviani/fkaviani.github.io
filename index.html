@@ -17,28 +17,32 @@
 		}
 
 		#floating-text {
-			font-size: 30px;
+			font-size: 100px;
 			font-weight: bold;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			animation: floating-text 3s ease-in-out infinite;
+			animation: floating-text 5s ease-in-out infinite;
 		}
 
-		@keyframes floating-text {
-			0% {
-				transform: translate(-50%, -50%);
-			}
-
-			50% {
-				transform: translate(-50%, -60%);
-			}
-
-			100% {
-				transform: translate(-50%, -50%);
-			}
-		}
+		@@keyframes floating-text {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-5deg) translateY(-20px);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(5deg) translateY(20px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+  }
+}
 		.article-box {
 	border: 1px solid black;
 	padding: 10px;
