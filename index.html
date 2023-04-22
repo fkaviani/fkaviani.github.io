@@ -15,14 +15,25 @@
 			height: 100%;
 			z-index: -1;
 		}
+
+		#text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 48px;
+			font-weight: bold;
+			color: white;
+		}
 	</style>
 </head>
 <body>
 	<div id="background"></div>
+
 	<div id="text">
 		Hello, World!
 	</div>
-	
+
 	<script type="text/javascript">
 		document.addEventListener("mousemove", function(event) {
 			var x = event.clientX;
