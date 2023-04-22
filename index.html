@@ -16,23 +16,34 @@
 			z-index: -1;
 		}
 
-		#text {
+		#floating-text {
+			font-size: 30px;
+			font-weight: bold;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			font-size: 48px;
-			font-weight: bold;
-			color: white;
+			animation: floating-text 3s ease-in-out infinite;
+		}
+
+		@keyframes floating-text {
+			0% {
+				transform: translate(-50%, -50%);
+			}
+
+			50% {
+				transform: translate(-50%, -60%);
+			}
+
+			100% {
+				transform: translate(-50%, -50%);
+			}
 		}
 	</style>
 </head>
 <body>
 	<div id="background"></div>
-
-	<div id="text">
-		Hello, World!
-	</div>
+	<div id="floating-text">Tattoo and Body Modification</div>
 
 	<script type="text/javascript">
 		document.addEventListener("mousemove", function(event) {
