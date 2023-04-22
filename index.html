@@ -18,39 +18,51 @@
 		}
 
 		#floating-text {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			animation: floating-text 5s ease-in-out infinite;
-			color: blue;
-		}
+  position: relative;
+  animation: floating 5s ease-in-out infinite, falling-letters 1s infinite;
+}
 
-		@keyframes floating-text {
-		  0% {
-		    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
-		    color: blue;
-		  }
-		  25% {
-		    transform: translate(-50%, -50%) rotate(-5deg) translateY(-20px);
-		    color: green;
-		  }
-		  50% {
-		    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
-		    color: red;
-		  }
-		  75% {
-		    transform: translate(-50%, -50%) rotate(5deg) translateY(20px);
-		    color: purple;
-		  }
-		  100% {
-		    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
-		    color: blue;
-		  }
-		}
+@keyframes floating {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-5deg) translateY(-20px);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(5deg) translateY(20px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+  }
+}
+
+@keyframes falling-letters {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 100px;
+    opacity: 0;
+  }
+}
 	</style>
 </head>
 <body>
+    <div>
+      <input type="text" placeholder="Search...">
+      <button onclick="search()">Search</button>
+    </div>
+    <div id="search-results"></div>
+
+    <script src="search.js"></script>
+  </body>
+</html>
+
 	<div id="background"></div>
 	<div id="floating-text">Tattoo & Body Modification</div>
 
