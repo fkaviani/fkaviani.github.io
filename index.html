@@ -20,14 +20,14 @@
 			background-color: #2196F3;
 			position: relative;
 			overflow: hidden;
-		}
-
-		.visualize:hover {
 			cursor: pointer;
-			animation: move 1s ease-out infinite alternate;
 		}
 
-		.visualize .circle {
+		.visualize:hover .circle-blue {
+			animation: burst 0.5s ease-out forwards;
+		}
+
+		.visualize .circle-blue {
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -39,37 +39,68 @@
 			animation: move 2s ease-in-out infinite alternate;
 		}
 
-		.visualize .circle:hover {
-			animation: none;
-			background-color: #ff5722;
-			box-shadow: 0 0 10px #ff5722;
+		.visualize:hover .circle-white {
+			content: "A";
+			font-size: 50px;
+			color: #fff;
+			background-color: #4CAF50;
+			animation: transform 0.5s ease-out forwards;
+		}
+
+		.visualize .circle-white {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 25px;
+			font-weight: bold;
+			color: #000;
 		}
 
 		@keyframes move {
 			from { transform: translate(0, 0); }
 			to { transform: translate(20px, -20px); }
 		}
+
+		@keyframes burst {
+			0% { transform: scale(1); }
+			50% { transform: scale(3); }
+			100% { transform: scale(5); opacity: 0; }
+		}
+
+		@keyframes transform {
+			0% { transform: scale(1); }
+			50% { transform: scale(2); }
+			100% { transform: scale(1); }
+		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="visualize">
-			<div class="circle"></div>
+			<div class="circle-blue"></div>
 		</div>
 		<div class="visualize">
-			<div class="circle"></div>
+			<div class="circle-blue"></div>
 		</div>
 		<div class="visualize">
-			<div class="circle"></div>
+			<div class="circle-blue"></div>
 		</div>
 		<div class="visualize">
-			<div class="circle"></div>
+			<div class="circle-white"></div>
 		</div>
 		<div class="visualize">
-			<div class="circle"></div>
+			<div class="circle-white"></div>
 		</div>
 		<div class="visualize">
-			<div class="circle"></div>
+			<div class="circle-white"></div>
 		</div>
 	</div>
 </body>
