@@ -5,6 +5,7 @@
 	<style type="text/css">
 		body {
 			background-color: beige;
+			position: relative; /* add relative positioning to the body */
 		}
 
 		#background {
@@ -17,37 +18,36 @@
 		}
 
 		#floating-text {
-			font-size: 100px;
-			font-weight: bold;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			animation: floating-text 5s ease-in-out infinite;
+			color: blue;
 		}
 
 		@keyframes floating-text {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
-  }
-  25% {
-    transform: translate(-50%, -50%) rotate(-5deg) translateY(-20px);
-  }
-  50% {
-    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
-  }
-  75% {
-    transform: translate(-50%, -50%) rotate(5deg) translateY(20px);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
-  }
-}
-		.article-box {
-	border: 1px solid black;
-	padding: 10px;
-	background-color: #f5f5f5;
-}
+		  0% {
+		    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+		    color: blue;
+		  }
+		  25% {
+		    transform: translate(-50%, -50%) rotate(-5deg) translateY(-20px);
+		    color: green;
+		  }
+		  50% {
+		    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+		    color: red;
+		  }
+		  75% {
+		    transform: translate(-50%, -50%) rotate(5deg) translateY(20px);
+		    color: purple;
+		  }
+		  100% {
+		    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+		    color: blue;
+		  }
+		}
 	</style>
 </head>
 <body>
