@@ -1,52 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zotero Folder Index</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Interactive Visualizations</title>
+	<style type="text/css">
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f9f9f9;
+		}
+
+		.visualize {
+			width: 150px;
+			height: 150px;
+			margin: 10px;
+			border-radius: 50%;
+			background-color: #2196F3;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.visualize:hover {
+			cursor: pointer;
+			animation: move 1s ease-out infinite alternate;
+		}
+
+		.visualize .circle {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #fff;
+			animation: move 2s ease-in-out infinite alternate;
+		}
+
+		.visualize .circle:hover {
+			animation: none;
+			background-color: #ff5722;
+			box-shadow: 0 0 10px #ff5722;
+		}
+
+		@keyframes move {
+			from { transform: translate(0, 0); }
+			to { transform: translate(20px, -20px); }
+		}
+	</style>
 </head>
 <body>
-
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Zotero Folder Index</a>
-    </div>
-  </nav>
-
-  <div class="container">
-    <h1>Welcome to my Zotero Folder Index</h1>
-    <p>Here you will find all the files I have saved on Zotero.</p>
-    <p>To access a folder, simply click on its name below.</p>
-
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">Folder 1</span>
-            <p>Description of folder 1</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Open Folder</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">Folder 2</span>
-            <p>Description of folder 2</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Open Folder</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<div class="container">
+		<div class="visualize">
+			<div class="circle"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle"></div>
+		</div>
+		<div class="visualize">
+			<div class="circle"></div>
+		</div>
+	</div>
 </body>
 </html>
